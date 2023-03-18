@@ -109,7 +109,8 @@ function addNote() {
     }
     const errorContainer = document.createElement('div');
     errorContainer.classList.add('errorMsg');
-    errorContainer.textContent = 'You have to write a note before you can add it.';
+    //errorContainer.textContent = 'You have to write a note before you can add it.';
+    errorContainer.dataset.lang = "addNoteErrorMsg";
     noteList.appendChild(errorContainer);
   }
 }
