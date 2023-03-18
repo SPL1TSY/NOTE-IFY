@@ -11,39 +11,39 @@ const router = {
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', router.nav);
     });
-    
+
     console.log(window.location)
     let path = location.pathname;
     let currPage = "notes"
-    if(path === "/favourites") {
+    if (path === "/favourites") {
       currPage = "favourites"
     }
-    if(path === "/login" && userToken) {
+    if (path === "/login" && userToken) {
       currPage = "login"
     } else {
       currPage = "notes"
     }
-    history.replaceState({ page: currPage }, currPage, '/'+currPage);
+    history.replaceState({ page: currPage }, currPage, '/' + currPage);
     // window.addEventListener("load", router.onLoad)
     window.addEventListener('popstate', router.poppin);
   },
   nav: function (event) {
     event.preventDefault();
     let currentPage = event.target.getAttribute('data-target');
-    if(!currentPage) {
+    if (!currentPage) {
       event.target.dataset.target = "login";
       event.target.dataset.lang = "login_label";
 
       document.querySelector("#note-list").textContent = document.querySelector("#fav-note-list").textContent = ""
 
       loadTranslations(currLang)
-      .then(translateElements)
-      .catch(err => console.error(err));
+        .then(translateElements)
+        .catch(err => console.error(err));
 
       localStorage.clear();
       return;
     }
-    
+
     document.querySelectorAll('.nav-link').forEach(link => {
       link.classList.remove("link-active");
     });
@@ -89,7 +89,7 @@ const router = {
     }
     document.querySelectorAll('.nav-link').forEach(link => {
       link.classList.remove("link-active");
-      if(link.dataset.target === currentPage) {
+      if (link.dataset.target === currentPage) {
         console.log("henlo")
         link.classList.add("link-active")
       }
@@ -104,7 +104,7 @@ const router = {
       document.getElementById('notes').dispatchEvent(router.show);
     }
   },
-  onLoad: function() {
+  onLoad: function () {
     if (window.location.hash) {
       // remove the hash and redirect to the new URL
       window.location.replace(window.location.hash.replace('#', ''));

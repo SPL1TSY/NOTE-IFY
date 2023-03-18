@@ -3,24 +3,23 @@ const newNoteInput = document.getElementById('note-content');
 const noteList = document.getElementById('note-list');
 const favNoteList = document.querySelector("#fav-note-list");
 
-
 // event for favouriting note
-document.addEventListener("click", function(e) {
+document.addEventListener("click", function (e) {
   // if the click happened on a favourite btn
-  if(e.target.classList.contains("btn-fav")) {
+  if (e.target.classList.contains("btn-fav")) {
     const li = e.target.parentElement; // the List item
     const img = e.target.children[0] // the image element on btn
-    
+
     // note Id
     const noteId = li.dataset.id;
 
     // looping over all the notes
     fetchedNotes.forEach(note => {
       // if note id matches to the one that was clicked on for favourite
-      if(noteId == note.id) {
+      if (noteId == note.id) {
         // change it's favourite status and image
         note.favourite = !note.favourite
-        if(note.favourite) {
+        if (note.favourite) {
           img.src = "images/star-active.svg"
         } else {
           img.src = "images/star-solid.svg"
@@ -32,10 +31,10 @@ document.addEventListener("click", function(e) {
             "Content-Type": "Application/json",
             "Authorization": `Bearer ${userToken}`
           },
-          body: JSON.stringify({favourite: note.favourite})
+          body: JSON.stringify({ favourite: note.favourite })
         })
-        .then(res => res.json())
-        .then(() => fetchNotes()) // after updating fetching new updated notes from DB
+          .then(res => res.json())
+          .then(() => fetchNotes()) // after updating fetching new updated notes from DB
       }
     })
   }
@@ -49,7 +48,7 @@ function createNoteElement(note) {
   favBtn.classList.add("btn");
   favBtn.classList.add("btn-fav")
   const favBtnImg = document.createElement("img");
-  favBtnImg.src = "images/star-"+ (note.favourite ? "active" : "solid") + ".svg"
+  favBtnImg.src = "images/star-" + (note.favourite ? "active" : "solid") + ".svg"
 
   favBtn.appendChild(favBtnImg);
 
@@ -61,7 +60,7 @@ function createNoteElement(note) {
   const buttonContainer = document.createElement('div');
 
   const editButton = document.createElement('button');
-  editButton.classList.add("mr-1")
+  editButton.classList.add("mr-1");
   // editButton.textContent = 'Edit'; //editButton.setAttribute('data-lang', 'edit-button'); Find a way to implement this one without bugs..
   editButton.dataset.lang = "edit-button";
   editButton.addEventListener('click', () => {
@@ -71,7 +70,7 @@ function createNoteElement(note) {
 
   const deleteButton = document.createElement('button');
   // deleteButton.textContent = 'Delete';
-  deleteButton.dataset.lang = "delete-button"
+  deleteButton.dataset.lang = "delete-button";
   deleteButton.addEventListener('click', () => {
     deleteNoteElement(li);
   });
@@ -110,7 +109,8 @@ function addNote() {
     }
     const errorContainer = document.createElement('div');
     errorContainer.classList.add('errorMsg');
-    errorContainer.textContent = 'You have to write a note before you can add it.';
+    //errorContainer.textContent = 'You have to write a note before you can add it.';
+    errorContainer.dataset.lang = "addNoteErrorMsg";
     noteList.appendChild(errorContainer);
   }
 }
@@ -139,14 +139,14 @@ function editNoteElement(noteElement) {
   const noteText = noteElement.textContent;
   // getting the note that is being edited
   const editingNote = fetchedNotes.find(note => note.id == id);
-  
+
   // making the favourites button anew
   const favBtn = document.createElement("button");
   favBtn.classList.add("btn");
   favBtn.classList.add("btn-fav")
   const favBtnImg = document.createElement("img");
 
-  favBtnImg.src = "images/star-"+ (editingNote.favourite ? "active" : "solid") + ".svg";
+  favBtnImg.src = "images/star-" + (editingNote.favourite ? "active" : "solid") + ".svg";
   favBtn.appendChild(favBtnImg);
 
   // Create an input field with the current note as the default value
@@ -165,7 +165,7 @@ function editNoteElement(noteElement) {
   const editButton = document.createElement('button');
   editButton.classList.add("mr-1")
 
-  editButton.dataset.lang = "edit-button"; // this will determine which language to show for everyother button like this
+  editButton.dataset.lang = "edit-button"; // this will determine which language to show for every button like this
   // not setting their text now, will set them by calling the translator function!
   editButton.addEventListener('click', () => {
     editNoteElement(noteElement);
@@ -254,7 +254,7 @@ function fetchNotes() {
       console.log(notes)
       noteList.innerHTML = '';
       fetchedNotes = notes.data;
-      // add fav notes after fetching is successfull
+      // add fav notes after fetching is successful
       addFavNotes(notes.data)
       notes.data.forEach((note) => {
         const noteElement = createNoteElement(note);
@@ -265,14 +265,14 @@ function fetchNotes() {
 }
 
 function addFavNotes(allNotes) {
-  if(allNotes[0]) {
-      favNoteList.textContent = "";
-      const favNotes = allNotes.filter(note => note.favourite);
-      favNotes[0] && favNotes.forEach(note => {
-         const li = createNoteElement(note);
-         favNoteList.appendChild(li);
-      })
-  } 
+  if (allNotes[0]) {
+    favNoteList.textContent = "";
+    const favNotes = allNotes.filter(note => note.favourite);
+    favNotes[0] && favNotes.forEach(note => {
+      const li = createNoteElement(note);
+      favNoteList.appendChild(li);
+    })
+  }
 }
 // Add event listener for new note form submission
 newNoteForm.addEventListener('submit', (event) => {
@@ -281,7 +281,7 @@ newNoteForm.addEventListener('submit', (event) => {
   if (errorMsg) {
     errorMsg.remove();
   }
-  if(!userToken) {
+  if (!userToken) {
     const errorContainer = document.createElement('div');
     errorContainer.classList.add('errorMsg');
     errorContainer.textContent = 'You have to Login or Register first';

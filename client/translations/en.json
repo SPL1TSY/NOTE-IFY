@@ -8,9 +8,11 @@
   "favourites_label": "Favourites",
   "new-note-label": "New note:",
   "add-note-button": "Add a note",
-  "error-text": "You have to write a note before you can add it.",
+  "addNoteErrorMsg": "You have to write a note before you can add it.",
+  "fillFormErrLabel": "Please fill out everything in the form!",
   "edit-button": "Edit",
   "delete-button": "Delete",
   "save-button": "Save",
-  "cancel-button": "Cancel"
+  "cancel-button": "Cancel",
+  "password_label": "Password"
 }

@@ -26,11 +26,11 @@ languageSelect.addEventListener('change', (event) => {
 
 // Load the translations and translate all elements on page load
 
-// function for calling loadtranslations and then applying it to make the code more dry
-function callTranslate(lang) {  
+// function for calling loadtranslations and then applying it
+function callTranslate(lang) {
   loadTranslations(lang)
-  .then(translateElements)
-  .catch(err => console.error(err));
+    .then(translateElements)
+    .catch(err => console.error(err));
 }
 
 callTranslate("en");

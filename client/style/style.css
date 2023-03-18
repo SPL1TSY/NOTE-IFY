@@ -172,6 +172,52 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #006699;
 }
+/* Style for Login/Register Form */
+.formBox {
+  display: flex;
+  width: fit-content;
+  margin: 0 auto;
+  width: 400px;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.formBox input {
+  background-color: unset;
+  border: none;
+  border-bottom: 1px solid black;
+}
+.formBox button {
+  margin-top: 40px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #0088cc;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+#regForm {
+  margin-bottom: 70px;
+}
+
+.btn-fav img {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.btn-fav {
+  background-color: unset;
+}
+
+button:disabled {
+  opacity: 0.8;
+}
 
 /* Style for the note list */
 #note-list, #fav-note-list {
@@ -213,7 +259,7 @@ li button {
   font-size: 16px;
 }
 
-li button:hover {
+li button:hover .btn-fav:hover, .formBox button:hover {
   background-color: #006699;
 }
 
@@ -234,50 +280,4 @@ li button:hover {
 
 .link-active {
   color: #0088cc;
-}
-
-.formBox {
-  display: flex;
-  width: fit-content;
-  margin: 0 auto;
-  width: 400px;
-  justify-content: space-between;
-  margin-bottom: 15px;
-}
-
-.formBox input {
-  background-color: unset;
-  border: none;
-  border-bottom: 1px solid black;
-}
-
-.formBox button {
-  margin-top: 40px;
-  margin: 0 auto;
-  padding: 5px 20px;
-  background-color: #333;
-  color: white;
-  cursor: pointer;
-}
-
-#regForm {
-  margin-bottom: 70px;
-}
-
-.btn-fav img {
-  width: 20px;
-  height: 20px;
-  pointer-events: none;
-}
-
-.btn-fav {
-  background-color: unset;
-}
-
-.btn-fav:hover {
-  background-color: unset;
-}
-
-button:disabled {
-  opacity: 0.8;
 }

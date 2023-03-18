@@ -12,22 +12,18 @@ let currLang = "en"
 let userToken = ""
 let fetchedNotes = [];
 
-if(prevToken) {
+if (prevToken) {
     userToken = prevToken
 }
 
-if(userToken) {
+if (userToken) {
     navLoginBtn.dataset.target = "";
     navLoginBtn.dataset.lang = "logout_label";
-
-    // loadTranslations(currLang)
-    // .then(translateElements)
-    // .catch(err => console.error(err));
 
     navLoginBtn.textContent = "Log Out";
 }
 
-function errorHandler(message = 'Please fill up all the inputs!') {
+function errorHandler(message = 'Please fill out all the inputs!') {
     const errorMsg = document.querySelector('.errorMsg');
     if (errorMsg) {
         errorMsg.remove();
@@ -38,13 +34,13 @@ function errorHandler(message = 'Please fill up all the inputs!') {
     regForm.parentElement.appendChild(errorContainer)
 }
 
-regForm.addEventListener("submit", function(e) {
+regForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
     let regEmailVal = regEmail.value;
     let regPassVal = regPass.value;
 
-    if(!regEmailVal || !regPassVal) {
+    if (!regEmailVal || !regPassVal) {
         errorHandler();
         return;
     }
@@ -54,42 +50,39 @@ regForm.addEventListener("submit", function(e) {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({email: regEmailVal, password: regPassVal})
+        body: JSON.stringify({ email: regEmailVal, password: regPassVal })
     })
-    .then(res => res.json())
-    .then(data => {
-        if(data.hasOwnProperty("message")) {
-            errorHandler(data.message)
-            return;
-        }
-        // const successContainer = document.createElement('div');
-        // successContainer.classList.add('successMsg');
-        // successContainer.textContent = 'Registered Successfully!';
-        // regForm.parentElement.appendChild(successContainer)
-        userToken = data.token;
-        localStorage.setItem("token", JSON.stringify(userToken))
-        navLoginBtn.dataset.target = "";
-        navLoginBtn.dataset.lang = "logout_label";
+        .then(res => res.json())
+        .then(data => {
+            if (data.hasOwnProperty("message")) {
+                errorHandler(data.message)
+                return;
+            }
+      
+            userToken = data.token;
+            localStorage.setItem("token", JSON.stringify(userToken))
+            navLoginBtn.dataset.target = "";
+            navLoginBtn.dataset.lang = "logout_label";
 
-        loadTranslations(currLang)
-        .then(translateElements)
-        .catch(err => console.error(err));
-        const notesNavBtn = document.querySelector("a[data-target='notes']");
-        notesNavBtn.click();
-        fetchNotes();
-        // setTimeout(() => successContainer.remove(), 5000)
-    })
-    .catch(e => console.log(e))
+            loadTranslations(currLang)
+                .then(translateElements)
+                .catch(err => console.error(err));
+            const notesNavBtn = document.querySelector("a[data-target='notes']");
+            notesNavBtn.click();
+            fetchNotes();
+            // setTimeout(() => successContainer.remove(), 5000)
+        })
+        .catch(e => console.log(e))
 })
 
 
-loginForm.addEventListener("submit", function(e) {
+loginForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
     let loginEmailVal = loginEmail.value;
     let loginPassVal = loginPass.value;
 
-    if(!loginEmailVal || !loginPassVal) {
+    if (!loginEmailVal || !loginPassVal) {
         errorHandler();
         return;
     }
@@ -99,33 +92,29 @@ loginForm.addEventListener("submit", function(e) {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({email: loginEmailVal, password: loginPassVal})
+        body: JSON.stringify({ email: loginEmailVal, password: loginPassVal })
     })
-    .then(res => res.json())
-    .then(data => {
-        if(data.hasOwnProperty("message")) {
-            errorHandler(data.message)
-            return;
-        }
-        // const successContainer = document.createElement('div');
-        // successContainer.classList.add('successMsg');
-        // successContainer.textContent = 'Logged in Successfully!';
-        // loginForm.parentElement.appendChild(successContainer)
-        userToken = data.token;
+        .then(res => res.json())
+        .then(data => {
+            if (data.hasOwnProperty("message")) {
+                errorHandler(data.message)
+                return;
+            }
+            userToken = data.token;
 
-        localStorage.setItem("token", JSON.stringify(userToken))
+            localStorage.setItem("token", JSON.stringify(userToken))
 
-        navLoginBtn.dataset.target = "";
-        navLoginBtn.dataset.lang = "logout_label";
+            navLoginBtn.dataset.target = "";
+            navLoginBtn.dataset.lang = "logout_label";
 
-        loadTranslations(currLang)
-        .then(translateElements)
-        .catch(err => console.error(err));
-        const notesNavBtn = document.querySelector("a[data-target='notes']");
-        notesNavBtn.click();
-        fetchNotes();
-        console.log(data)
-        // setTimeout(() => successContainer.remove(), 5000)
-    })
+            loadTranslations(currLang)
+                .then(translateElements)
+                .catch(err => console.error(err));
+            const notesNavBtn = document.querySelector("a[data-target='notes']");
+            notesNavBtn.click();
+            fetchNotes();
+            console.log(data)
+            // setTimeout(() => successContainer.remove(), 5000)
+        })
 })
 

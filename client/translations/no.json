@@ -8,9 +8,11 @@
   "favourites_label": "Favoritter",
   "new-note-label": "Nytt notat:",
   "add-note-button": "Legg til notat",
-  "error-text": "Du må skrive inn et notat før du kan legge det til.",
+  "addNoteErrorMsg": "Du må skrive inn et notat før du kan legge det til.",
+  "fillFormErrLabel": "Du må fylle ut alle feltene!",
   "edit-button": "Endre",
   "delete-button": "Slett",
   "save-button": "Lagre",
-  "cancel-button": "Avbryt"
+  "cancel-button": "Avbryt",
+  "password_label": "Passord"
 }
