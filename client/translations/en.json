@@ -1,0 +1,16 @@
+{
+  "app-title": "Note-IFY",
+  "language_label": "Language:",
+  "notes_label": "Notes",
+  "login_label": "Log In",
+  "logout_label": "Log Out",
+  "register_label": "Register",
+  "favourites_label": "Favourites",
+  "new-note-label": "New note:",
+  "add-note-button": "Add a note",
+  "error-text": "You have to write a note before you can add it.",
+  "edit-button": "Edit",
+  "delete-button": "Delete",
+  "save-button": "Save",
+  "cancel-button": "Cancel"
+}

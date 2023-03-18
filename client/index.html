@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Note-IFY</title>
+  <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+  <!-- Nav bar -->
+  <nav>
+    <a id="noteIFY">
+      <h1>NOTE-IFY</h1>
+    </a>
+    <a href="#" data-target="notes" data-lang="notes_label" class="nav-link link-active">Notes</a>
+    <a href="#" data-target="favourites" data-lang="favourites_label" class="nav-link">Favourites</a>
+    <a href="#" data-target="login" data-lang="login_label" class="nav-link">Log In</a>
+
+    <div id="language-selector">
+      <label for="language-select" data-lang="language_label">Language:</label>
+      <select id="language-select">
+        <option value="en" selected>English</option>
+        <option value="no">Norwegian</option>
+      </select>
+    </div>
+  </nav>
+
+  <!-- Notes div -->
+  <div class="page active" id="notes">
+    <h1 data-lang="notes_label">Notes</h1>
+    <form id="new-note-form">
+      <label for="note-content" data-lang="new-note-label">New note:</label>
+      <input type="text" placeholder="NOTE-IFY.." id="note-content" name="note-content">
+      <button type="submit" data-lang="add-note-button">Add note</button>
+    </form>
+
+    <ul id="note-list" data-lang="notes-list">
+    </ul>
+  </div>
+
+  <!-- Login/Register div -->
+  <div class="page" id="login">
+    <h1 data-lang="login_label">Log In</h1>
+    <section>
+      <form action="/#" id="loginForm" method="POST" autocomplete="off">
+        <legend>
+          <div class="formBox">
+            <label for="email">Email</label><input class="email" type="email" autocomplete="off" />
+          </div>
+          <div class="formBox">
+            <label for="pass">Password</label><input class="pass" type="password" autocomplete="off" />
+          </div>
+          <div class="formBox"><button data-lang="login_label">Login</button></div>
+        </legend>
+      </form>
+    </section>
+    <h1 data-lang="register_label">Register</h1>
+    <section>
+      <form action="/#" id="regForm" method="POST" autocomplete="off">
+        <legend>
+          <div class="formBox">
+            <label for="email">Email</label><input class="email" type="email" autocomplete="off" />
+          </div>
+          <div class="formBox">
+            <label for="pass">Password</label><input class="pass" type="password" autocomplete="off" />
+          </div>
+          <div class="formBox"><button data-lang="register_label">Register</button></div>
+        </legend>
+      </form>
+    </section>
+  </div>
+
+  <!-- Favourites div -->
+  <div class="page" id="favourites">
+    <h1 data-lang="favourites_label">Favourites</h1>
+    <ul id="fav-note-list">
+      
+    </ul>
+  </div>
+
+  <script src="./js/index.js"></script>
+  <script src="./js/router.js"></script>
+  <script src="./js/notes.js"></script>
+  <script src="./js/translate.js"></script>
+
+
+  <!-- Note-IFY App developed & designed by Harun Hurtic -->
+</body>
+
+</html>

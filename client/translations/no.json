@@ -1,0 +1,16 @@
+{
+  "app-title": "Note-IFY",
+  "language_label": "Språk:",
+  "notes_label": "Notater",
+  "login_label": "Logg Inn",
+  "logout_label": "Logg ut",
+  "register_label": "Registrer",
+  "favourites_label": "Favoritter",
+  "new-note-label": "Nytt notat:",
+  "add-note-button": "Legg til notat",
+  "error-text": "Du må skrive inn et notat før du kan legge det til.",
+  "edit-button": "Endre",
+  "delete-button": "Slett",
+  "save-button": "Lagre",
+  "cancel-button": "Avbryt"
+}
