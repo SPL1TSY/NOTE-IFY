@@ -109,8 +109,8 @@ function addNote() {
     }
     const errorContainer = document.createElement('div');
     errorContainer.classList.add('errorMsg');
-    //errorContainer.textContent = 'You have to write a note before you can add it.';
-    errorContainer.dataset.lang = "addNoteErrorMsg";
+    errorContainer.textContent = 'You have to write a note before you can add it.';
+    //errorContainer.dataset.lang = "addNoteErrorMsg"; Try implementing this without bugs
     noteList.appendChild(errorContainer);
   }
 }
