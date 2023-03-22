@@ -157,7 +157,7 @@ input[type="text"] {
 
 /* Style for the add note button */
 button[type="submit"] {
-  background-color: #0088cc;
+  background-color: #005580;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -170,7 +170,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #006699;
+  background-color: #005580;
 }
 /* Style for Login/Register Form */
 .formBox {
@@ -192,7 +192,7 @@ button[type="submit"]:hover {
   margin: 0 auto;
   padding: 10px 20px;
   color: #fff;
-  background-color: #0088cc;
+  background-color: #005580;
   border: none;
   color: white;
   cursor: pointer;
@@ -250,7 +250,7 @@ li {
 }
 
 li button {
-  background-color: #ff5a5f;
+  background-color: #B30600;
   color: #fff;
   border: none;
   padding: 5px 10px;
@@ -260,7 +260,7 @@ li button {
 }
 
 li button:hover .btn-fav:hover, .formBox button:hover {
-  background-color: #006699;
+  background-color: #005580;
 }
 
 .mr-1 {
@@ -268,7 +268,7 @@ li button:hover .btn-fav:hover, .formBox button:hover {
 }
 
 .errorMsg {
-  color: red;
+  color: #B30600;
   font-size: 16px;
   font-weight: bold;
 }
@@ -279,5 +279,5 @@ li button:hover .btn-fav:hover, .formBox button:hover {
 }
 
 .link-active {
-  color: #0088cc;
+  color: #005580;
 }
