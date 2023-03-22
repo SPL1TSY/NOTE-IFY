@@ -28,6 +28,11 @@ nav {
   color: #fff;
   padding: 10px;
 }
+
+.link-active {
+  color: #2db9ff;
+}
+
 @media only screen and (max-width: 767px) {
   nav {
     flex-direction: column;
@@ -274,8 +279,4 @@ li button:hover .btn-fav:hover, .formBox button:hover {
   color: lightgreen;
   font-size: 16px;
   font-weight: bold;
-}
-
-.link-active {
-  color: #0074AD;
 }
