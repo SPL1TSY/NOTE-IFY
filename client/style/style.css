@@ -166,11 +166,10 @@ button[type="submit"] {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  /* margin-top: 10px; */
 }
 
 button[type="submit"]:hover {
-  background-color: #005580;
+  background-color: #0074AD;
 }
 /* Style for Login/Register Form */
 .formBox {
@@ -260,7 +259,7 @@ li button {
 }
 
 li button:hover .btn-fav:hover, .formBox button:hover {
-  background-color: #005580;
+  background-color: #0074AD;
 }
 
 .mr-1 {
