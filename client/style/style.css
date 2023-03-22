@@ -125,7 +125,6 @@ nav {
   }
 }
 
-
 /********* END of Router *********/
 
 /* Style for the new note form */
@@ -278,5 +277,5 @@ li button:hover .btn-fav:hover, .formBox button:hover {
 }
 
 .link-active {
-  color: #005580;
+  color: #0074AD;
 }
