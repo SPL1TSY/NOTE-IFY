@@ -8,17 +8,19 @@ body {
 }
 
 /********* Router & Nav-bar *********/
-.page{
-  display:none;
+.page {
+  display: none;
   margin: 20px auto;
   padding: 0;
   width: 80%;
   justify-content: center;
   text-align: center;
 }
-.active{
+
+.active {
   display: block;
 }
+
 /* Style for the navigation bar */
 nav {
   display: flex;
@@ -29,6 +31,26 @@ nav {
   padding: 10px;
 }
 
+/* Style for the footer */
+footer {
+  margin-top: auto;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#creditLink {
+  color: #fff;
+}
+
+#creditLink:hover {
+  color: #0088cc;
+}
+
 @media only screen and (max-width: 767px) {
   nav {
     flex-direction: column;
@@ -36,22 +58,27 @@ nav {
     justify-content: center;
     padding: 10px 0;
   }
+
   .nav-link {
     margin: 10px 0;
     font-size: 20px;
   }
+
   #language-selector {
     margin-top: 10px;
     margin-bottom: 20px;
   }
+
   #language-selector label {
     margin-right: 5px;
     font-size: 18px;
   }
+
   #language-selector select {
     font-size: 18px;
     padding: 5px 10px;
   }
+
   nav h1 {
     margin: 0;
     font-size: 28px;
@@ -87,7 +114,8 @@ nav {
   background-color: #555;
   color: #fff;
 }
-.nav-link{
+
+.nav-link {
   margin: 0;
   font-size: 16px;
   color: white;
@@ -95,30 +123,48 @@ nav {
   letter-spacing: 1px;
   text-decoration: none;
 }
-#noteIFY{
+
+#noteIFY {
   font-size: 20px;
   color: white;
   font-weight: bold;
   letter-spacing: 1px;
   text-decoration: none;
 }
-.nav-link:hover{
+
+#footerText {
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+#footerText link {
   color: #0088cc;
 }
-#noteIFY:hover{
+
+.nav-link:hover {
+  color: #0088cc;
+}
+
+#noteIFY:hover {
   color: #0088cc;
   animation: 2s anim-flipX ease infinite;
 }
+
 /* CSS Animation keyframes for text */
 @keyframes anim-flipX {
   0% {
     opacity: 0;
     transform: rotateX(90def);
   }
+
   50% {
     opacity: 1;
     transform: rotateX(720deg);
   }
+
   100% {
     /* animate nothing to pause animation at the end */
     opacity: 1;
@@ -161,6 +207,7 @@ button[type="submit"] {
   color: #fff;
   border: none;
   padding: 10px 20px;
+  margin: 5px;
   border-radius: 4px;
   margin-left: 10px;
   font-size: 16px;
@@ -171,14 +218,16 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #0074AD;
 }
+
 /* Style for Login/Register Form */
 .formBox {
   display: flex;
   width: fit-content;
   margin: 0 auto;
-  width: 400px;
-  justify-content: space-between;
+  width: 90%;
   margin-bottom: 15px;
+  justify-content: center;
+  align-items: center;
 }
 
 .formBox input {
@@ -186,6 +235,7 @@ button[type="submit"]:hover {
   border: none;
   border-bottom: 1px solid black;
 }
+
 .formBox button {
   margin-top: 40px;
   margin: 0 auto;
@@ -204,6 +254,14 @@ button[type="submit"]:hover {
   margin-bottom: 70px;
 }
 
+.logRegSection {
+  margin-bottom: 70px;
+  border: 5px;
+  border-style: double;
+  border-radius: 10px;
+  border-color: #333;
+}
+
 .btn-fav img {
   width: 20px;
   height: 20px;
@@ -219,7 +277,8 @@ button:disabled {
 }
 
 /* Style for the note list */
-#note-list, #fav-note-list {
+#note-list,
+#fav-note-list {
   list-style-type: none;
   margin: 20px auto;
   padding: 0;
@@ -258,7 +317,8 @@ li button {
   font-size: 16px;
 }
 
-li button:hover .btn-fav:hover, .formBox button:hover {
+li button:hover .btn-fav:hover,
+.formBox button:hover {
   background-color: #0074AD;
 }
 
@@ -271,11 +331,13 @@ li button:hover .btn-fav:hover, .formBox button:hover {
   font-size: 16px;
   font-weight: bold;
 }
+
 .successMsg {
   color: lightgreen;
   font-size: 16px;
   font-weight: bold;
 }
+
 .link-active {
   color: #2db9ff;
 }

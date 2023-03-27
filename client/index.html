@@ -43,29 +43,31 @@
 
   <!-- Login/Register div -->
   <div class="page" id="login">
-    <h1 data-lang="login_label">Log In</h1>
     <section>
-      <form action="/#" id="loginForm" method="POST" autocomplete="off">
+      <form action="/#" class="logRegSection" id="loginForm" method="POST" autocomplete="off">
+        <h1 data-lang="login_label">Log In</h1>
         <legend>
           <div class="formBox">
             <label for="email">Email</label><input class="email" type="email" autocomplete="off" />
           </div>
           <div class="formBox">
-            <label for="pass" data-lang="password_label">Password</label><input class="pass" type="password" autocomplete="off" />
+            <label for="pass" data-lang="password_label">Password</label><input class="pass" type="password"
+              autocomplete="off" />
           </div>
           <div class="formBox"><button data-lang="login_label">Login</button></div>
         </legend>
       </form>
     </section>
-    <h1 data-lang="register_label">Register</h1>
     <section>
-      <form action="/#" id="regForm" method="POST" autocomplete="off">
+      <form action="/#" class="logRegSection" id="regForm" method="POST" autocomplete="off">
+        <h1 data-lang="register_label">Register</h1>
         <legend>
           <div class="formBox">
             <label for="email">Email</label><input class="email" type="email" autocomplete="off" />
           </div>
           <div class="formBox">
-            <label for="pass" data-lang="password_label">Password</label><input class="pass" type="password" autocomplete="off" />
+            <label for="pass" data-lang="password_label">Password</label><input class="pass" type="password"
+              autocomplete="off" />
           </div>
           <div class="formBox"><button data-lang="register_label">Register</button></div>
         </legend>
@@ -77,9 +79,15 @@
   <div class="page" id="favourites">
     <h1 data-lang="favourites_label">Favourites</h1>
     <ul id="fav-note-list">
-      
     </ul>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    <h1 id="footerText">Note-IFY App by <a id="creditLink" target="_blank" href="https://www.hurtic.net/">Harun
+        Hurtic</a><br>
+      Version 5.0.0</h1>
+  </footer>
 
   <script src="./js/index.js"></script>
   <script src="./js/router.js"></script>
@@ -88,7 +96,7 @@
 
 
   <!-- Note-IFY App developed & designed by Harun Hurtic -->
-   <!-- Final version 5.0.0-->
+  <!-- Final version 5.0.0-->
 </body>
 
 </html>

@@ -31,7 +31,7 @@ function errorHandler(message = 'Please fill out all the inputs!') {
     const errorContainer = document.createElement('div');
     errorContainer.classList.add('errorMsg');
     errorContainer.textContent = message;
-    regForm.parentElement.appendChild(errorContainer)
+    regForm.parentElement.appendChild(errorContainer);
 }
 
 regForm.addEventListener("submit", function (e) {
@@ -58,7 +58,7 @@ regForm.addEventListener("submit", function (e) {
                 errorHandler(data.message)
                 return;
             }
-      
+
             userToken = data.token;
             localStorage.setItem("token", JSON.stringify(userToken))
             navLoginBtn.dataset.target = "";
